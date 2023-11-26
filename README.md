@@ -8,15 +8,6 @@ Genetic algorithms can be used for optimization problems and they provide one of
 
 Here we create a random population of **N** individuals and then start to change them according to the need of the optimization problem.
 
-There is an awesome [article](https://towardsdatascience.com/introduction-to-genetic-algorithms-including-example-code-e396e98d8bf3) about Genetic Algorithm. Make sure to have a look at it.
-
-## About the Project
-I found out that there are a number of different Genetic Algorithm libraries available for pyhton inlucing **PYEVOLVE** etc. But I found it hard to get them installed on my system.
-Besides they probably run inly for Python2.x. I wanted a relatively simple Genetic Algorithm Library for Python3.x with minimum dependencies.
-
-Thus I decided to make one on my own. Besides I thought this would help me with an indepth understanding of the Algorithm if I can implement it.
-And here we are.. :grin:
-
 ## Project Description
 
 ### Config.py
@@ -46,7 +37,7 @@ def __flipGene__():
 ```
 
 ### Roulette Wheel
-This is a selection algorithm that I have implemented which helps in selection of individuals for reproduction
+This is a selection algorithm that have been implemented which helps in selection of individuals for reproduction
 
 ```
 def __createCumulativeProabilities___():
@@ -86,10 +77,8 @@ def simulateEvolution():
 # Fitness function passed to it as an argument
 # Returns best individual
 ```
-## How to Use the Library
-Using the library is pretty simple and straight forward.
-
-I have formulated some examples in the **/Examples** folder.
+## How to Use this project for demo:
+Formulating some examples in the **/Examples** folder.
 
 Additionally, lets have a look here:
 
