@@ -1,0 +1,253 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "pprint",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "GeneticUtility",
+        "importPath": "GeneticUtility",
+        "description": "GeneticUtility",
+        "isExtraImport": true,
+        "detail": "GeneticUtility",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "Config",
+        "description": "Config",
+        "isExtraImport": true,
+        "detail": "Config",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "Config",
+        "description": "Config",
+        "isExtraImport": true,
+        "detail": "Config",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "Config",
+        "description": "Config",
+        "isExtraImport": true,
+        "detail": "Config",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "Config",
+        "description": "Config",
+        "isExtraImport": true,
+        "detail": "Config",
+        "documentation": {}
+    },
+    {
+        "label": "structural_similarity",
+        "importPath": "skimage.metrics",
+        "description": "skimage.metrics",
+        "isExtraImport": true,
+        "detail": "skimage.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "Chromosome",
+        "importPath": "Chromosome",
+        "description": "Chromosome",
+        "isExtraImport": true,
+        "detail": "Chromosome",
+        "documentation": {}
+    },
+    {
+        "label": "Chromosome",
+        "importPath": "Chromosome",
+        "description": "Chromosome",
+        "isExtraImport": true,
+        "detail": "Chromosome",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "copy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copy",
+        "description": "copy",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "RouletteWheel",
+        "importPath": "SelectionAlgorithms.RouletteWheel",
+        "description": "SelectionAlgorithms.RouletteWheel",
+        "isExtraImport": true,
+        "detail": "SelectionAlgorithms.RouletteWheel",
+        "documentation": {}
+    },
+    {
+        "label": "fitnessFunction",
+        "kind": 2,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "def fitnessFunction(chromosome):\n    fitness = 0\n    for i in range(0, len(imageFlattened)):\n        fitness += pow((imageFlattened[i] - chromosome.genes[i]), 2)\n    return fitness    \n# Read example image\n# image = cv2.imread('/home/sparsha/ProjectWork/gitprojects/GeneticAlgorithmLibrary/Examples/s.jpg', 0)\nimage = cv2.imread('C:/Users/V/Downloads/Compressed/Genetic-Algorithm-In-Python-master/Examples/s.jpg', 0)\n# Convert Image to List\nimageFlattened = image.flatten().tolist()",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "stepExecutor",
+        "kind": 2,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "def stepExecutor(generationNumber, bestIndividual):\n    bestIndividual = np.array(bestIndividual.genes)\n    bestIndividual = bestIndividual * 255.0\n    bestIndividual = np.reshape(bestIndividual, (20, 20))\n    bestIndividual = cv2.resize(bestIndividual, (200, 200))\n    # Tính toán SSIM\n    ssim_value = ssim(cv2.resize(image, (200, 200)), bestIndividual, data_range=bestIndividual.max() - bestIndividual.min())\n    # Hiển thị kết quả SSIM\n    print(f\"Generation {generationNumber}, SSIM: {ssim_value}\")\n    # Show original Image and Formed Image at each step",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "kind": 5,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "image = cv2.imread('C:/Users/V/Downloads/Compressed/Genetic-Algorithm-In-Python-master/Examples/s.jpg', 0)\n# Convert Image to List\nimageFlattened = image.flatten().tolist()\n# Convert 255's to 1 and rest to 0\n# This is done in order to create binary image\nfor i in range(0, len(imageFlattened)):\n    if imageFlattened[i] == 255:\n        imageFlattened[i] = 1\n    else:\n        imageFlattened[i] = 0",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "imageFlattened",
+        "kind": 5,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "imageFlattened = image.flatten().tolist()\n# Convert 255's to 1 and rest to 0\n# This is done in order to create binary image\nfor i in range(0, len(imageFlattened)):\n    if imageFlattened[i] == 255:\n        imageFlattened[i] = 1\n    else:\n        imageFlattened[i] = 0\nimage = np.reshape(imageFlattened, (20, 20)) * 255.0\n# Step Executor Function",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "kind": 5,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "image = np.reshape(imageFlattened, (20, 20)) * 255.0\n# Step Executor Function\n# Called after Each Generation for Any Action That the Programmer might want to execute\n# Here we use this method to show the formed image at each step\nfrom skimage.metrics import structural_similarity as ssim\ndef stepExecutor(generationNumber, bestIndividual):\n    bestIndividual = np.array(bestIndividual.genes)\n    bestIndividual = bestIndividual * 255.0\n    bestIndividual = np.reshape(bestIndividual, (20, 20))\n    bestIndividual = cv2.resize(bestIndividual, (200, 200))",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "util",
+        "kind": 5,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "util = GeneticUtility()\nx = util.simulateEvolution(300, fitnessFunction, stepExecution = stepExecutor)\nx = np.array(x.genes)\nx = x * 255.0\nx = np.reshape(x, (20, 20))\ncv2.imshow(\"formed image\", x)\ncv2.waitKey(0)",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "x = util.simulateEvolution(300, fitnessFunction, stepExecution = stepExecutor)\nx = np.array(x.genes)\nx = x * 255.0\nx = np.reshape(x, (20, 20))\ncv2.imshow(\"formed image\", x)\ncv2.waitKey(0)",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "x = np.array(x.genes)\nx = x * 255.0\nx = np.reshape(x, (20, 20))\ncv2.imshow(\"formed image\", x)\ncv2.waitKey(0)",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "x = x * 255.0\nx = np.reshape(x, (20, 20))\ncv2.imshow(\"formed image\", x)\ncv2.waitKey(0)",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "Examples.ImageReconstruction",
+        "description": "Examples.ImageReconstruction",
+        "peekOfCode": "x = np.reshape(x, (20, 20))\ncv2.imshow(\"formed image\", x)\ncv2.waitKey(0)",
+        "detail": "Examples.ImageReconstruction",
+        "documentation": {}
+    },
+    {
+        "label": "RouletteWheel",
+        "kind": 6,
+        "importPath": "SelectionAlgorithms.RouletteWheel",
+        "description": "SelectionAlgorithms.RouletteWheel",
+        "peekOfCode": "class RouletteWheel(object):\n    def __init__(self, chromosomes, config):\n        self.chromosomes = chromosomes\n        self.config = config\n        self.__createCumulativeProbabilities__()\n    def RouletteWheelSelection(self):\n        # Select first chromosome\n        random1 = random.uniform(0, 1)\n        chromosome1 = None\n        for chromosome in self.chromosomes:",
+        "detail": "SelectionAlgorithms.RouletteWheel",
+        "documentation": {}
+    },
+    {
+        "label": "Chromosome",
+        "kind": 6,
+        "importPath": "Chromosome",
+        "description": "Chromosome",
+        "peekOfCode": "class Chromosome(object):\n    def __init__(self, config):\n        self.config = config\n        self.genes = [random.randint(0, 1) for i in range(0, self.config.NO_OF_GENES)]  # chuỗi gen kiểu nhị phân\n        self.fitness = 0\n        self.originalFitness = 0.0\n        self.normalizedFitness = 0.0\n        self.endRange = 0.0\n    def mutate(self):\n        for i in range(0, len(self.genes)):",
+        "detail": "Chromosome",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "kind": 6,
+        "importPath": "Config",
+        "description": "Config",
+        "peekOfCode": "class Config(object):\n    def __init__(self):\n        self.NO_OF_GENES = 400\n        self.MUTATION_PROBABILITY = 0.002\n        self.POPULATION_SIZE = 600\n        self.IDEAL_FITNESS = 0\n        self.ELITE_CARRY_OVER = 20\n        self.FITNESS_CATEGORY = \"minimize\"\n        self.CROSSOVER_PROBABILITY = 0.95\n        self.GENE_TYPE = \"binary\"",
+        "detail": "Config",
+        "documentation": {}
+    },
+    {
+        "label": "GeneticUtility",
+        "kind": 6,
+        "importPath": "GeneticUtility",
+        "description": "GeneticUtility",
+        "peekOfCode": "class GeneticUtility(object):\n    def __init__(self):\n        self.config = Config()\n        self.GENERATION_COUNT = 0\n        self.selectedChromosomes = {}\n    def __crossover__(self, chromosome1, chromosome2):\n        # Randomly create a crossover point\n        crossoverPoint = random.randint(1, len(chromosome1.genes) - 1) # Là điểm ngẫu nhiên trong chuỗi gen. Điểm này xác định vị trí cắt chuỗi gen để thực hiện lai ghép.\n# ------------------------------------Recombination Steps---------------------------------------------------------\n        # Prepare child genes",
+        "detail": "GeneticUtility",
+        "documentation": {}
+    }
+]
